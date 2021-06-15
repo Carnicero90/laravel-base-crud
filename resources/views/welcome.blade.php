@@ -1,24 +1,12 @@
 @extends('layouts.app')
 
 @section('main_content')
-<h2>FUMETTI</h2>
-  <ul class="comics">
-    @foreach ($comics as $comic)
-    <li class="comic flexer">
-        <img src="{{ $comic->pic }}" alt="">
-        <div class="details bg-main c-main">
-            <span>{{ $comic->series }} N°: {{ $comic->number }}</span>
-            <h3>{{ $comic->title }} </h3>
-            <p class="description">
-                {{ $comic->description }}
-            </p>
-            <span>Pagine: {{ $comic->pages }}</span>
-            <span class="price">Prezzo: {{ $comic->price }}</span>
-            <span>Uscita: {{ $comic->release_date }}</span>
-        </div>
-    </li>
-        
-    @endforeach
+    <h2>FUMETTI</h2>
+    <a href="{{ route('comics.index') }}" style="border: 1px solid red; padding: 5px;">
+        {{-- TODO sposta in header --}}
+        link a pag fumetti da mettere poi in header
+    </a>
 
-  </ul>
+
+    </ul>
 @endsection
