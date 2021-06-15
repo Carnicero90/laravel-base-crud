@@ -1,0 +1,11 @@
+header {
+    color: $main_text_color;
+    .header-head {
+        background-color: $main_color;
+        padding: 20px 40px;
+        i {
+            padding-right: 5px;
+            font-size: 1.3em;
+        }
+    }
+}

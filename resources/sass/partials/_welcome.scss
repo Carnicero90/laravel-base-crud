@@ -1,0 +1,29 @@
+.comics {
+    background-color: rgb(25, 62, 91);
+    padding: 10px;
+
+    .comic {
+        width: calc(100% / 3);
+        min-width: 500px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+
+        .details {
+            font-size: .8em;
+            padding: 5px;
+            h3 {
+                margin-bottom: 15px;
+            }
+            span {
+                display: block;
+                margin-bottom: 5px;
+            }
+            .price::after {
+                content: '$';
+            }
+        }
+        img {
+            width: 50%;
+        }
+    }
+}
