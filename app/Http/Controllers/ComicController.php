@@ -39,7 +39,7 @@ class ComicController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {   
+    {
         $request->validate([
             'series' => 'required|min:3|max:50',
             'title' => 'required|max:100',
@@ -96,12 +96,12 @@ class ComicController extends Controller
      */
     public function update(Request $request, $id)
     {
-        
+
         $form_data = $request->all();
 
         $comic = Comic::find($id);
         $comic->update($form_data);
-        
+
         return redirect()->route('comics.show', ['comic' => $comic->id]);
     }
 
@@ -113,8 +113,23 @@ class ComicController extends Controller
      */
     public function destroy($id)
     {
-       $comic = Comic::find($id);
-       $comic->delete();
-       return redirect()->route('comics.index');
+        $comic = Comic::find($id);
+        $comic->delete();
+        return redirect()->route('comics.index');
+    }
+
+    public function search(Request $request)
+    {
+        $search = $request->input('search');
+        $results = Comic::query()
+        ->where('title', 'LIKE', "%{$search}%")
+        ->orWhere('series', 'LIKE', "%{$search}%")
+        ->orWhere('description', 'LIKE', "%{$search}%")
+        ->get();
+        $data = [
+            'results' => $results
+        ];
+
+        return view('search', $data);
     }
 }

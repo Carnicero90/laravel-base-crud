@@ -9,7 +9,10 @@
         </ul>
         <h1>EDIZIONI BOOLELLI</h1>
         <div class="search">
-            <input type="text" placeholder="CERCA NEL SITO">
+            <form action="{{ route('search') }}" method="GET">
+                <input type="text" name="search" required/>
+                <button type="submit" class="btn btn-primary">ricerca</button>
+            </form>
         </div>
     </div>
     {{-- END div.header-head --}}
