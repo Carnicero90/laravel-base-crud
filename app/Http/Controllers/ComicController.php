@@ -114,8 +114,16 @@ class ComicController extends Controller
     public function search(Request $request)
     {
         $search = $request->input('search');
+        $search = explode(' ', $search);
+        $params = [];
+        foreach ($search as $word) {
+            $params[] = ['title', 'LIKE', '%' . $word . '%']; //title a titolo esemplificativo
+        };
+        dump($params);
+        dump($search);
+        $search = implode('%', $search); 
         $results = Comic::query()
-            ->where('title', 'LIKE', "%{$search}%")
+            ->where($params)
             ->orWhere('series', 'LIKE', "%{$search}%")
             ->orWhere('description', 'LIKE', "%{$search}%")
             ->get();
