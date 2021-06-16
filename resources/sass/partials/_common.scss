@@ -2,9 +2,14 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+
 }
 li {
     list-style-type: none;
+}
+
+h1, h2 {
+    font-weight: 800;
 }
 
 .flexer {
@@ -18,6 +23,9 @@ li {
     &.wrap {
         flex-wrap: wrap;
     }
+    &.center {
+        justify-content: center;
+    }
 }
 
 a {
@@ -27,8 +35,9 @@ a {
 
 body {
     font-family: 'Nunito', sans-serif;
+    background: #1b3a52;
+    min-height: 100vh;
 }
-
 
 .bg-main {
     background-color: $main_color;

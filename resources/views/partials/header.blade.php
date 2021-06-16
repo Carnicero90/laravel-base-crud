@@ -13,4 +13,12 @@
         </div>
     </div>
     {{-- END div.header-head --}}
+    <nav>
+        <ul class="flexer center">
+            <li><a href="/">HOME</a></li>
+            <li><a href="{{ route('comics.index') }}">FUMETTI</a></li>
+            <li><a href=""></a></li>
+        </ul>
+
+    </nav>
 </header>

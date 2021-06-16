@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('main_content')
-<h2>FUMETTI</h2>
+<h2 class="c-main">{{ $comic->title }}</h2>
   <ul class="comics">
     <li class="comic flexer">
         <img src="{{ $comic->pic }}" alt="">
