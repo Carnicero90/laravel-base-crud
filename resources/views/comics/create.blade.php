@@ -8,7 +8,6 @@
             @foreach ($errors->all() as $error)
                 <li>{{ $error }}</li>
             @endforeach
-            @dump($errors)
 
         </ul>
         

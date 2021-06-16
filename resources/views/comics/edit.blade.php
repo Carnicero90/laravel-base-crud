@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('main_content')
-@dump($comic)
     <h2>Aggiungi un albo</h2>
     {{-- error handler --}}
     @if ($errors->any())
@@ -9,10 +8,9 @@
             @foreach ($errors->all() as $error)
                 <li>{{ $error }}</li>
             @endforeach
-            @dump($errors)
-
+ 
         </ul>
-        
+
     @endif
     {{-- END error handler --}}
     <form action="{{ route('comics.update', ['comic' => $comic->id]) }}" method="post">
@@ -32,7 +30,8 @@
         </div>
         <div class="form-group">
             <label for="description">Descrizione</label>
-            <textarea name="description" id="description" class="form-control" cols="30" rows="10">{{ $comic->description }}</textarea>
+            <textarea name="description" id="description" class="form-control" cols="30"
+                rows="10">{{ $comic->description }}</textarea>
         </div>
         <div class="form-group">
             <label for="pages">Numero pagine</label>

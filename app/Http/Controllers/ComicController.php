@@ -40,15 +40,7 @@ class ComicController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'series' => 'required|min:3|max:50',
-            'title' => 'required|max:100',
-            'price' => 'required',
-            'pages' => 'required',
-            'release_date' => 'required',
-
-            'number' => 'required'
-        ]);
+        $request->validate($this->paramsToValidate());
         $data = $request->all();
         $comic = new Comic();
         $comic->fill($data);
@@ -96,6 +88,7 @@ class ComicController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $request->validate($this->paramsToValidate());
 
         $form_data = $request->all();
 
@@ -122,14 +115,26 @@ class ComicController extends Controller
     {
         $search = $request->input('search');
         $results = Comic::query()
-        ->where('title', 'LIKE', "%{$search}%")
-        ->orWhere('series', 'LIKE', "%{$search}%")
-        ->orWhere('description', 'LIKE', "%{$search}%")
-        ->get();
+            ->where('title', 'LIKE', "%{$search}%")
+            ->orWhere('series', 'LIKE', "%{$search}%")
+            ->orWhere('description', 'LIKE', "%{$search}%")
+            ->get();
         $data = [
             'results' => $results
         ];
 
         return view('search', $data);
+    }
+
+    protected function paramsToValidate()
+    {
+        return [
+            'series' => 'required|min:3|max:50',
+            'title' => 'required|max:100',
+            'price' => 'required',
+            'pages' => 'required',
+            'release_date' => 'required',
+            'number' => 'required'
+        ];
     }
 }
