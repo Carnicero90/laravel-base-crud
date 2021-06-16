@@ -14,6 +14,12 @@
             <span>Pagine: {{ $comic->pages }}</span>
             <span class="price">Prezzo: {{ $comic->price }}</span>
             <span>Uscita: {{ $comic->release_date }}</span>
+            <a href="{{ route('comics.edit', ['comic'=>$comic->id]) }}" class="btn btn-primary">EDIT</a>
+            <form action="{{ route('comics.destroy', ['comic' => $comic->id]) }}" method="post">
+              @csrf
+              @method('DELETE')
+              <input type="submit" onclick="confirm('Sicuro sicuro?')" class="btn btn-danger" value="Cancella">
+            </form>
         </div>
     </li>
   </ul>
