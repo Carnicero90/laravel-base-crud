@@ -52,6 +52,10 @@ body {
   color: white;
 }
 
+label {
+  color: white;
+}
+
 header {
   color: white;
 }
@@ -103,6 +107,14 @@ header nav li {
 
 .comics .comic img {
   width: 50%;
+}
+
+.jumbotron {
+  background-color: #0f293c;
+}
+
+.jumbotron img {
+  max-height: 700px;
 }
 
 .errors li {

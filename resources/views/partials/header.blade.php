@@ -20,7 +20,7 @@
         <ul class="flexer center">
             <li><a href="/">HOME</a></li>
             <li><a href="{{ route('comics.index') }}">FUMETTI</a></li>
-            <li><a href=""></a></li>
+            <li><a href="{{ route('comics.create') }}">CREA</a></li>
         </ul>
 
     </nav>

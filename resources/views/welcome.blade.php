@@ -1,11 +1,9 @@
 @extends('layouts.app')
 
 @section('main_content')
-    <h2>FUMETTI</h2>
-    <a href="{{ route('comics.index') }}" style="border: 1px solid red; padding: 5px;">
-        {{-- TODO sposta in header --}}
-        link a pag fumetti da mettere poi in header
-    </a>
+   <div class="jumbotron flexer center">
+       <img src="https://shop.sergiobonelli.it/resizer/-1/-1/true/1540895486927.jpg--.jpg?1540895487000" alt="">
+   </div>
 
 
     </ul>

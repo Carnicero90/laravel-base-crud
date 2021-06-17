@@ -43,7 +43,7 @@
         </div>
         <div class="form-group">
             <label for="release_date">Data uscita</label>
-            <input type="date" class="form-control" id="release_date" name="release_date" value="{{ $comic->date }}">
+            <input type="date" class="form-control" id="release_date" name="release_date" value="2021-10-10">
         </div>
         <div class="form-group">
             <label for="pic">Immagine di copertina</label>
